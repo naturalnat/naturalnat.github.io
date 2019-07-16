@@ -1,11 +1,11 @@
 # Site settings
-author: Natalie Taktachev
-title: 
+author: Natalie Takta chev
+title: Flatiron
 header-img: img/home-bg.png
 email: ntaktach@gmail.com
-copyright_name: Natalie Taktachev
+copyright_name: Natalie Takta chev
 description: > # this means to ignore newlines until "baseurl:"
-  
+  Online Bootcamp
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: 
 github_username:  naturalnat

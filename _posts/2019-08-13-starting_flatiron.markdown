@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "starting flatiron"
-date:       2019-08-13 05:42:18 +0000
+date:       2019-08-13 01:42:18 -0400
 permalink:  starting_flatiron
 ---
 

@@ -19,16 +19,16 @@ With some help from Flatiron instructors, I changed my scraper code and made it 
 The first scraper, which gather a list of names and corresponding websites, creates an instance of a council member with their name and a URL:
 
 
-class Electedofficials::Scraper
-  def self.scrape_cms
-    page = Nokogiri::HTML(open('https://council.nyc.gov/districts/'))
-    page.css('.sort-member').each do |member|
-      name = member.css('a').text.strip
-      url = member.css('a').first['href']
+    class Electedofficials::Scraper
+      def self.scrape_cms
+        page = Nokogiri::HTML(open('https://council.nyc.gov/districts/'))
+        page.css('.sort-member').each do |member|
+        name = member.css('a').text.strip
+        url = member.css('a').first['href']
 
       Electedofficials::Official.new(name, url)
-    end
-  end
+      end
+     end
   
 
 
@@ -37,22 +37,22 @@ Because the URL was already scraped, I used that information in a second scraper
 
 The Council Member menu looks like this: 
 
-  def city_council
-    city_council = Electedofficials::Official.all
-    city_council.each.with_index(1) { |person, index| puts "#{index}. #{person.name} \n Profile Page: #{person.url}" }
-    puts "Would you like more information on a Council Memeber? Type 'yes' for more info or 'exit' to exit"
-    input = gets.strip.downcase
-    if input == 'yes'
-      puts 'Please enter the number corresponding to the CM to get more info'
-      input = gets.strip
-      city_council.each.with_index(1) do |person, index|
-        if input == index.to_s
-          more_info = Electedofficials::Scraper.scrape_cm(person.url)
-          puts more_info
+      def city_council
+        city_council = Electedofficials::Official.all
+        city_council.each.with_index(1) { |person, index| puts "#{index}. #{person.name} \n Profile Page: #{person.url}" }
+        puts "Would you like more information on a Council Memeber? Type 'yes' for more info or 'exit' to exit"
+        input = gets.strip.downcase
+        if input == 'yes'
+          puts 'Please enter the number corresponding to the CM to get more info'
+          input = gets.strip
+          city_council.each.with_index(1) do |person, index|
+            if input == index.to_s
+              more_info = Electedofficials::Scraper.scrape_cm(person.url)
+              puts more_info
+            end
+          end
         end
       end
-    end
-  end
 
 
 
@@ -60,25 +60,25 @@ This menu takes an input of a string and, if it corresponds to the number of the
 
 This is the second scraper: 
 
-  def self.scrape_cm(cm)
-    page = Nokogiri::HTML(open(cm))
-    bio = page.css('.page-content').text.strip
-    d_office = page.css('.text-small').first.text.strip
-    l_office = page.css('.text-small').last.text.strip
-    email = page.css('.show-for-xlarge').text.strip
-    puts "District Office:"
-    puts d_office
-    puts "\n"
-    puts "Legislative Office"
-    puts l_office
-    puts "\n"
-    puts email
-    puts "\n"
-    puts "Biography:"
-    puts "\n"
-    puts bio
+      def self.scrape_cm(cm)
+        page = Nokogiri::HTML(open(cm))
+        bio = page.css('.page-content').text.strip
+        d_office = page.css('.text-small').first.text.strip
+        l_office = page.css('.text-small').last.text.strip
+        email = page.css('.show-for-xlarge').text.strip
+        puts "District Office:"
+        puts d_office
+        puts "\n"
+        puts "Legislative Office"
+        puts l_office
+        puts "\n"
+        puts email
+        puts "\n"
+        puts "Biography:"
+        puts "\n"
+        puts bio
 
-  end
+      end
   
   
   

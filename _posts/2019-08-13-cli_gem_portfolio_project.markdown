@@ -10,10 +10,7 @@ The CLI Gem Portfolio Project was the first project of the program. It required 
 
 Beginning the project was intimidating. The walkthrough videos that were posted on the assignment page helped a lot. After getting the bin files set up and working, coding the rest of the methods that would display a menu and the results was not so bad -- I felt relatively confident after all of the lab work in coding those methods. 
 
-The scraper was one of the more frustrating components of the lab to build and took a lot of trial and error to get working in order for it to be able to list the NYC 
-
-
-website and list the Council Members. Other Officials, like the Borough Presidents and the Mayor, I hardcoded, so only current elected officials are retured. This is something I would like to expand on in the future, in addition to including more options for elected offices and information about them to be returned. 
+The scraper was one of the more frustrating components of the lab to build and took a lot of trial and error to get working in order for it to be able to list the NYC website and list the Council Members. Other Officials, like the Borough Presidents and the Mayor, I hardcoded, so only current elected officials are retured. This is something I would like to expand on in the future, in addition to including more options for elected offices and information about them to be returned. 
 
 edit: 
 With some help from Flatiron instructors, I changed my scraper code and made it a little more complex. Instead of only listing the Council Members, I changed the code to provide the URL of their profile site. Additionally, I added another menu, which allows the user to select a Council Member to recieve more options on. This part was fun, because it requires a second scraper, which scrapes the profile pages of Council Members based on the user input. 
@@ -88,4 +85,6 @@ This is the second scraper:
  This scrapes the individual profile pages of Council Members for their District and Legislative offices, as well as their biographies. This also provides their contact information. 
 
 
-Overall, I am quite proud of what I have done, even though I recongize all its flaws and areas that could be improved. I never expected to have been doing this. 
+Overall, I am quite proud of what I have done, even though I recongize all its flaws and areas that could be improved. The walk through videos provided great guidance, I started to run into more problems toward the end, especially with my scraper. THe biggest challenge was getting it to work. Conceptually, I understood what a scraper was supposed to do - essentially, it gathers the desired info from the appropriate area on the web page and return the text. Just right click, explore and find the field. Smooth sailing from there. Easy, right? But my scraper was finnicky, and it took m lot of tinkering with the code and many trials and errors to get it to return the appropriate strings for me.  
+
+I never expected to have been doing this. 

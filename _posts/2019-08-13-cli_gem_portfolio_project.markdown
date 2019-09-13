@@ -10,13 +10,16 @@ The CLI Gem Portfolio Project was the first project of the program. It required 
 
 Beginning the project was intimidating. The walkthrough videos that were posted on the assignment page helped a lot. After getting the bin files set up and working, coding the rest of the methods that would display a menu and the results was not so bad -- I felt relatively confident after all of the lab work in coding those methods. 
 
-The scraper was one of the more frustrating components of the lab to build and took a lot of trial and error to get working in order for it to be able to list the NYC Council website and list the Council Members. Other Officials, like the Borough Presidents and the Mayor, I hardcoded, so only current elected officials are retured. This is something I would like to expand on in the future, in addition to including more options for elected offices and information about them to be returned. 
+The scraper was one of the more frustrating components of the lab to build and took a lot of trial and error to get working in order for it to be able to list the NYC 
+
+
+website and list the Council Members. Other Officials, like the Borough Presidents and the Mayor, I hardcoded, so only current elected officials are retured. This is something I would like to expand on in the future, in addition to including more options for elected offices and information about them to be returned. 
 
 edit: 
-With some help from Flatiron instructors, I changed my scraper code and made it a little more complex. Instead of only listing the Council Members, I changed the code to provide the URL of their profile site. Additionally, I added another menu, which allows the user to select a council member to recieve more options on. This part was fun, because it requires a second scraper, which scrapes the profile pages of council members based on the user input. 
+With some help from Flatiron instructors, I changed my scraper code and made it a little more complex. Instead of only listing the Council Members, I changed the code to provide the URL of their profile site. Additionally, I added another menu, which allows the user to select a Council Member to recieve more options on. This part was fun, because it requires a second scraper, which scrapes the profile pages of Council Members based on the user input. 
 
 
-The first scraper, which gather a list of names and corresponding websites, creates an instance of a council member with their name and a URL:
+The first scraper, which gather a list of names and corresponding websites, creates an instance of a Council Member with their name and a URL:
 
 
     class Electedofficials::Scraper
@@ -32,7 +35,7 @@ The first scraper, which gather a list of names and corresponding websites, crea
   
 
 
-Because the URL was already scraped, I used that information in a second scraper. After a user is presented with a list of council members, the menu asks the user to input a number corresponding to the council member about which they'd like to learn more information. 
+Because the URL was already scraped, I used that information in a second scraper. After a user is presented with a list of Council Members, the menu asks the user to input a number corresponding to the Council Member about which they'd like to learn more information. 
 
 
 The Council Member menu looks like this: 
@@ -40,7 +43,7 @@ The Council Member menu looks like this:
       def city_council
         city_council = Electedofficials::Official.all
         city_council.each.with_index(1) { |person, index| puts "#{index}. #{person.name} \n Profile Page: #{person.url}" }
-        puts "Would you like more information on a Council Memeber? Type 'yes' for more info or 'exit' to exit"
+        puts "Would you like more information on a Council Member? Type 'yes' for more info or 'exit' to exit"
         input = gets.strip.downcase
         if input == 'yes'
           puts 'Please enter the number corresponding to the CM to get more info'
@@ -56,7 +59,7 @@ The Council Member menu looks like this:
 
 
 
-This menu takes an input of a string and, if it corresponds to the number of the council member, calls on the scraper to scrape the URL. 
+This menu takes an input of a string and, if it corresponds to the number of the Council Member, calls on the scraper to scrape the URL. 
 
 This is the second scraper: 
 
@@ -82,7 +85,7 @@ This is the second scraper:
   
   
   
- This scrapes the individual profile pages of council mmebers for their District and Legislative offices, as well as their biographies. This also provides their contact information. 
+ This scrapes the individual profile pages of Council Members for their District and Legislative offices, as well as their biographies. This also provides their contact information. 
 
 
 Overall, I am quite proud of what I have done, even though I recongize all its flaws and areas that could be improved. I never expected to have been doing this. 

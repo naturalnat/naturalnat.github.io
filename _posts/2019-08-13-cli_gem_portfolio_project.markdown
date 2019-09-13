@@ -86,5 +86,3 @@ This is the second scraper:
 
 
 Overall, I am quite proud of what I have done, even though I recongize all its flaws and areas that could be improved. The walk through videos provided great guidance, I started to run into more problems toward the end, especially with my scraper. THe biggest challenge was getting it to work. Conceptually, I understood what a scraper was supposed to do - essentially, it gathers the desired info from the appropriate area on the web page and return the text. Just right click, explore and find the field. Smooth sailing from there. Easy, right? But my scraper was finnicky, and it took m lot of tinkering with the code and many trials and errors to get it to return the appropriate strings for me.  
-
-I never expected to have been doing this. 

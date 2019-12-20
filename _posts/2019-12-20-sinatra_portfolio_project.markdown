@@ -11,11 +11,15 @@ For my second portfolio project, I chose to  make a feel good app that allows us
 
 The app is run on a local server using shotgun. The MVC (models, views, controllers) framework relies on interaction between the three components to work. The models are the "logic" of the app, and they manipulate data.
 
-`class User < ActiveRecord::Base
+```
+
+class User < ActiveRecord::Base
   has_secure_password
   has_many :cats
 end
-`
+```
+
+
 My user.rb model associates cats with user data using ActiveRecord database, and has a secure password. 
 
 The controllers are the link between the models and views, allowing the user to interact with the views, relying on the controller to transmit data between the two. 

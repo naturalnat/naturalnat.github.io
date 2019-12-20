@@ -39,6 +39,7 @@ class ApplicationController < Sinatra::Base
   end
 end
 ```
+
 My application_controller.rb controller sets a public folder, enables sessions and sets an ID, which is a way to store data for use with unique ID. This also redirects to the "home page" - the index - if the user is not logged in. Otherwise, it redirects to a page where the user can see their cats and interact with them. 
 
 The index.erb file is a "view" - the part which users interact with directly. My index.erb file looks like this: 
@@ -80,7 +81,9 @@ end
 
 This is an example from my users_controller.rb.
 
-`post '/signup' do
+```
+
+post '/signup' do
     if params[:username] == '' || params[:password] == '' || params[:email] == ''
       flash[:error] = 'Username, email and password fields must be filled'
       redirect to '/signup'
@@ -110,7 +113,11 @@ This is an example from my users_controller.rb.
       t.string :password_digest
     end
   end
-end`
+end
+
+```
+
+
 
 My favorite part of creating this project, however, was setting up a counter allowing for users to limit the amount of times a cat can get fed salami, because afterall, they are a treat ;) 
 
@@ -127,9 +134,15 @@ get '/thankyoubrother/:name' do
     erb :'cats/thankyou'
   end
 ```
-	This finds the cat in the database by its name, and counts the number of times the cat was fed. 
-	
-	`class CreateCats < ActiveRecord::Migration[5.2]
+
+
+This finds the cat in the database by its name, and counts the number of times the cat was fed. 
+
+
+
+```
+
+class CreateCats < ActiveRecord::Migration[5.2]
   def change
     create_table :cats do |t|
       t.string :name
@@ -137,7 +150,9 @@ get '/thankyoubrother/:name' do
       t.integer :counter, default: 0
     end
   end
-end`
+end
+
+```
 
 My migration file contains the counter code, and keeps track of this in the database. 
 
